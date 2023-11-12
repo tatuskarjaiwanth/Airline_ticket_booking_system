@@ -125,21 +125,21 @@ int fli_num_validation() {
     array<int, 11> flightNumbers = {123445, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 123456, 234567};
     
     while (true) {
-        // Prompt the user to enter the flight number
+       
         cout << "Enter the flight number: ";
 
-        // Check if the input operation was successful
+        
         if (cin >> num) {
-            // Check if the flight number is valid
+            
             for (int i = 0; i < 10; i++) {
                 if (num == flightNumbers[i]) {
-                    return num; // Valid flight number, exit the function
+                    return num; 
                 }
             }
             cout << "Invalid flight number. Try again." << endl;
         } else {
             cout << "Invalid input. Please enter a valid flight number." << endl;
-            // Clear the input buffer
+            
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -239,7 +239,7 @@ void Book_reservation()
     }
    
 }
-// cout<<"Booking Your Flight"<<endl;
+
 
 int comparison(string Name , int flight_num){
      queue<Passenger_Details> tempQueue = myQueue;
@@ -320,49 +320,7 @@ void Exit(int &a)
     a = 0;
 }
 
-// void operation_of_menu()
-// {
-//     int option = 1;
 
-//     while (option)
-//     {
-//         cout << "Enter the number of a menu option: ";
-//         cin >> option;
-//         switch (option)
-//         {
-//         case 1:
-//             Book_reservation();
-//             break;
-//         case 2:
-//             Cancel_reservation();
-//             break;
-//         case 3:
-//             Display_flight_details();
-//             break;
-//         case 4:
-//         case 0:
-//             Exit(option);
-//             break;
-
-//         default:
-
-//             cout << "-----------------------------------------------" << endl;
-//             cout << "         Airplane Ticket Booking SYSTEM            " << endl;
-//             cout << "\n";
-
-//             cout << "Please pick an option from the menu below." << endl;
-//             cout << "1. Book reservation" << endl;
-//             cout << "2. Cancel reservation" << endl;
-//             cout << "3. Display flight details" << endl;
-//             cout << "4. Exit(4 or 0) " << endl;
-//             cout << "\n";
-//             cout << "-----------------------------------------------" << endl;
-//             cout << "Enter proper Number from Menu" << endl;
-
-//             break;
-//         }
-//     }
-// }
 
 
 void operation_of_menu() {

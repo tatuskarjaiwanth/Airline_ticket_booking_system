@@ -125,21 +125,21 @@ int fli_num_validation() {
     array<int, 11> flightNumbers = {123445, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 123456, 234567};
     
     while (true) {
-       
+        // Prompt the user to enter the flight number
         cout << "Enter the flight number: ";
 
-        
+        // Check if the input operation was successful
         if (cin >> num) {
-            
+            // Check if the flight number is valid
             for (int i = 0; i < 10; i++) {
                 if (num == flightNumbers[i]) {
-                    return num; 
+                    return num; // Valid flight number, exit the function
                 }
             }
             cout << "Invalid flight number. Try again." << endl;
         } else {
             cout << "Invalid input. Please enter a valid flight number." << endl;
-            
+            // Clear the input buffer
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -191,7 +191,7 @@ int bill(int num)
 }
 
 int cost = 0;
-int x;
+
 
 void Book_reservation()
 {
@@ -227,11 +227,11 @@ void Book_reservation()
         
         passenger[i].Contact = contact_validator();
 
-        if(i==0){
+        
         
         passenger[i].flight_number = fli_num_validation();
-         x = passenger[i].flight_number;
-        }
+        
+        
         cost+=bill(passenger[i].flight_number);
         passenger[i].cost=bill(passenger[i].flight_number);
         myQueue.push(passenger[i]);
@@ -239,7 +239,7 @@ void Book_reservation()
     }
    
 }
-
+// cout<<"Booking Your Flight"<<endl;
 
 int comparison(string Name , int flight_num){
      queue<Passenger_Details> tempQueue = myQueue;
@@ -301,7 +301,7 @@ void Display_flight_details()
         cout << "Age: " << frontElement.age << endl;
         cout << "Gender:" << frontElement.Gender << endl;
         cout << "Contact: " << frontElement.Contact << endl;
-        cout << "Flight Number: " << x << endl;
+        cout << "Flight Number: " << frontElement.flight_number << endl;
         cout<<"Cost: "<<frontElement.cost<<endl;
         cout << "-------------------------------------" << endl;
 
